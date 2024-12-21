@@ -11,8 +11,8 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Component;
 
-import javax.mail.MessagingException;
-import javax.mail.internet.MimeMessage;
+import jakarta.mail.MessagingException;
+import jakarta.mail.internet.MimeMessage;
 import java.io.File;
 
 /**
@@ -85,6 +85,7 @@ public class MailServiceImpl implements MailService{
      * @param content
      * @param filePath
      */
+    @Override
     public void sendAttachmentsMail(String to, String subject, String content, String filePath){
         MimeMessage message = mailSender.createMimeMessage();
 
@@ -116,6 +117,7 @@ public class MailServiceImpl implements MailService{
      * @param rscPath
      * @param rscId
      */
+    @Override
     public void sendInlineResourceMail(String to, String subject, String content, String rscPath, String rscId){
         MimeMessage message = mailSender.createMimeMessage();
 
